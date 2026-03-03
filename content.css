@@ -1,0 +1,206 @@
+#ponytranslate-root {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483647;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  pointer-events: none;
+}
+
+.ponytranslate-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 240px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 50%),
+    linear-gradient(135deg, rgba(19, 42, 76, 0.94), rgba(37, 77, 135, 0.92));
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(15, 28, 46, 0.28);
+  backdrop-filter: blur(12px);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ponytranslate-widget.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ponytranslate-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(255, 190, 92, 0.18);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ponytranslate-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.ponytranslate-copy strong {
+  font-size: 13px;
+}
+
+.ponytranslate-copy span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+[data-ponytranslate-anchor="active"] {
+  position: relative !important;
+}
+
+[data-ponytranslate-highlighted="true"] {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 214, 170, 0.28),
+    rgba(255, 214, 170, 0.12)
+  );
+  box-shadow: inset 0 0 0 1px rgba(211, 107, 31, 0.12);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+[data-ponytranslate-rendered="loading"] {
+  box-shadow: inset 0 0 0 1px rgba(70, 112, 165, 0.08);
+}
+
+[data-ponytranslate-rendered="error"] {
+  box-shadow: inset 0 0 0 1px rgba(217, 72, 65, 0.1);
+}
+
+.ponytranslate-inline-host {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+  color: inherit;
+}
+
+.ponytranslate-inline-host[data-mode="overlay"] {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 2147483000;
+}
+
+.ponytranslate-inline-host[data-mode="dual"] {
+  display: block;
+  margin-top: 10px;
+}
+
+.ponytranslate-inline-host[data-mode="highlight"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(520px, calc(100vw - 24px));
+  z-index: 2147483000;
+}
+
+.ponytranslate-inline-host[data-mode="highlight"][data-visible="false"] {
+  pointer-events: none;
+}
+
+html[data-ponytranslate-mode="highlight"] {
+  outline: 3px solid rgba(211, 107, 31, 0.35);
+  outline-offset: -3px;
+}
+
+body[data-ponytranslate-mode="dual"] {
+  background-image:
+    linear-gradient(180deg, rgba(211, 107, 31, 0.018), rgba(211, 107, 31, 0.018)),
+    linear-gradient(90deg, transparent 49.7%, rgba(211, 107, 31, 0.08) 50%, transparent 50.3%);
+  background-size: auto, 160px 160px;
+}
+
+#ponytranslate-selection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483646;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+#ponytranslate-selection[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.ponytranslate-selection-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ponytranslate-selection-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #d36b1f, #f1a548);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(211, 107, 31, 0.28);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ponytranslate-selection-action-secondary {
+  background: linear-gradient(135deg, #214f7e, #3f7fb8);
+  box-shadow: 0 10px 22px rgba(33, 79, 126, 0.24);
+}
+
+.ponytranslate-selection-card {
+  width: min(360px, calc(100vw - 24px));
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(53, 87, 127, 0.14);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 16px 28px rgba(15, 28, 46, 0.18);
+  color: #213247;
+}
+
+.ponytranslate-selection-meta {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5b7188;
+}
+
+.ponytranslate-selection-result {
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+@media (max-width: 680px) {
+  .ponytranslate-selection-actions {
+    width: min(320px, calc(100vw - 24px));
+  }
+
+  .ponytranslate-selection-action {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+}

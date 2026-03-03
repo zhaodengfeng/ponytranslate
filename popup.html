@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小马快译 - PonyTranslate</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <p class="eyebrow">🐴 小马快译</p>
+        <h1>PonyTranslate</h1>
+        <p class="subtitle">快速切换翻译状态、目标语言与显示模式。</p>
+      </header>
+
+      <section class="panel">
+        <label class="toggle-row" for="enabledToggle">
+          <span>
+            <strong>启用翻译</strong>
+            <small>控制当前页面的翻译层是否激活</small>
+          </span>
+          <input id="enabledToggle" type="checkbox" />
+          <span class="toggle-pill" aria-hidden="true"></span>
+        </label>
+
+        <label class="field" for="languageSelect">
+          <span>目标语言</span>
+          <select id="languageSelect">
+            <option value="zh-CN">简体中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本语</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+          </select>
+        </label>
+
+        <fieldset class="field">
+          <legend>显示模式</legend>
+          <div class="mode-grid">
+            <label class="mode-option">
+              <input type="radio" name="mode" value="overlay" checked />
+              <span>覆盖模式</span>
+            </label>
+            <label class="mode-option">
+              <input type="radio" name="mode" value="dual" />
+              <span>双语对照</span>
+            </label>
+            <label class="mode-option">
+              <input type="radio" name="mode" value="highlight" />
+              <span>高亮提示</span>
+            </label>
+          </div>
+        </fieldset>
+      </section>
+
+      <footer class="status-bar">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">正在读取设置...</span>
+      </footer>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
