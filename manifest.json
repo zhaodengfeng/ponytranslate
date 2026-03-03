@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "小马快译 - PonyTranslate",
   "short_name": "PonyTranslate",
-  "version": "2.0.0",
+  "version": "0.0.1",
   "description": "轻快双语阅读，沉浸式翻译体验。支持双语对照、划词翻译、分享卡片生成。",
   "permissions": [
     "storage",
@@ -13,7 +13,7 @@
     "<all_urls>"
   ],
   "action": {
-    "default_title": "ponytranslate v2.0",
+    "default_title": "小马快译 PonyTranslate v0.0.1",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",
